@@ -1,13 +1,18 @@
 package main
 
-import "github.com/gofiber/fiber/v2"
+import (
+	"github.com/dabolau/leona/route"
+	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/logger"
+)
 
 func main() {
+	// 获取应用实例
 	app := fiber.New()
-
-	app.Get("/", func(c *fiber.Ctx) error {
-		return c.SendString("Hello, World!")
-	})
-
-	app.Listen(":3000")
+	// 使用日志中间件
+	app.Use(logger.New())
+	// 获取路由
+	route.Home(app)
+	// 监听服务
+	app.Listen("0.0.0.0:8081")
 }
