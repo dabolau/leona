@@ -13,13 +13,13 @@ func User(app *fiber.App) {
 	// 用户分组
 	userGroup := app.Group("/user")
 	// 用户信息
-	userGroup.Get("/all/:pageSize/:page", controller.UserAllHandler)
+	userGroup.Get("/", controller.UserHandler)
 	// 用户详情
-	userGroup.Get("/detail/:id", controller.UserDetailHandler)
+	userGroup.Get("/detail", controller.UserDetailHandler)
 	// 用户添加
 	userGroup.Post("/add", controller.UserAddHandler)
 	// 用户编辑
-	userGroup.Put("/change/:id", controller.UserChangeHandler)
+	userGroup.Put("/change", controller.UserChangeHandler)
 	// 用户删除
-	userGroup.Delete("/delete/:id", controller.UserDeleteHandler)
+	userGroup.Delete("/delete", controller.UserDeleteHandler)
 }

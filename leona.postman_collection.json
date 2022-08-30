@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "53db7ad4-222e-4d48-b516-74e2f8f8d855",
+		"name": "leona",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "用户信息",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/user/?text=&size=3&page=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"user",
+						""
+					],
+					"query": [
+						{
+							"key": "text",
+							"value": ""
+						},
+						{
+							"key": "size",
+							"value": "3"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "用户详情",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/user/detail/?id=6302eaa241074ed10562e223",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"user",
+						"detail",
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "6302eaa241074ed10562e223"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "用户添加",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"hello3\",\n    \"password\":\"123456\",\n    \"email\":\"hello3@qq.com\",\n    \"phone\":\"12345678901\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/user/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"user",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "用户编辑",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"hello222\",\n    \"password\":\"123456\",\n    \"email\":\"hello222@qq.com\",\n    \"phone\":\"12345678901\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/user/change/?id=630daf11bffa3cf699547480",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"user",
+						"change",
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "630daf11bffa3cf699547480"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "用户删除",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/user/delete/?id=630d889c8d76f58de597523c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"user",
+						"delete",
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "630d889c8d76f58de597523c"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

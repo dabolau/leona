@@ -1,6 +1,7 @@
 package controller
 
 import (
+	"fmt"
 	"log"
 	"strconv"
 
@@ -22,33 +23,30 @@ var userCollection = database.GetCollection(database.MongoClient, "users")
 var validate = validator.New()
 
 // 用户信息
-func UserAllHandler(c *fiber.Ctx) error {
+func UserHandler(c *fiber.Ctx) error {
 	// 数据模型
 	var users []model.User
 	// 分页信息
 	var findOptions options.FindOptions
-	var page int64 = 1
+	var text string = ""
 	var pageSize int64 = 10
-	if !(c.Params("page") == "") {
-		pageInt, _ := strconv.Atoi(c.Params("page"))
-		if pageInt == 0 {
-			pageInt = 1
-		}
-		page = int64(pageInt)
+	var page int64 = 1
+	// 获取参数
+	text = c.Query("text")
+	pageSize, _ = strconv.ParseInt(c.Query("size"), 10, 64)
+	page, _ = strconv.ParseInt(c.Query("page"), 10, 64)
+	if pageSize == 0 {
+		pageSize = 1
 	}
-	if !(c.Params("pageSize") == "") {
-		pageSizeInt, _ := strconv.Atoi(c.Params("pageSize"))
-		if pageSizeInt == 0 {
-			pageSizeInt = 10
-		}
-		pageSize = int64(pageSizeInt)
+	if page == 0 {
+		page = 1
 	}
 	if pageSize > 0 {
 		findOptions.SetSkip((page - 1) * pageSize)
 		findOptions.SetLimit(pageSize)
 	}
 	// 查询数据
-	cursor, err := userCollection.Find(c.Context(), bson.M{}, &findOptions)
+	cursor, err := userCollection.Find(c.Context(), bson.M{"username": bson.M{"$regex": primitive.Regex{Pattern: fmt.Sprintf(".*%v.*", text), Options: "i"}}}, &findOptions)
 	if err != nil {
 		return c.Status(fiber.StatusNotFound).JSON(response.ResponseUser{
 			Message:    "查询失败",
@@ -78,7 +76,7 @@ func UserDetailHandler(c *fiber.Ctx) error {
 	// 数据模型
 	var user model.User
 	// 获取编号
-	objectId, err := primitive.ObjectIDFromHex(c.Params("id"))
+	objectId, err := primitive.ObjectIDFromHex(c.Query("id"))
 	if err != nil {
 		return c.Status(fiber.StatusInternalServerError).JSON(response.ResponseUser{
 			Message:    "编号错误",
@@ -148,7 +146,7 @@ func UserChangeHandler(c *fiber.Ctx) error {
 	var requestUser model.User
 	var user model.User
 	// 获取编号
-	objectId, err := primitive.ObjectIDFromHex(c.Params("id"))
+	objectId, err := primitive.ObjectIDFromHex(c.Query("id"))
 	if err != nil {
 		return c.Status(fiber.StatusInternalServerError).JSON(response.ResponseUser{
 			Message:    "编号错误",
@@ -210,7 +208,7 @@ func UserDeleteHandler(c *fiber.Ctx) error {
 	// 数据模型
 	var user model.User
 	// 获取编号
-	objectId, err := primitive.ObjectIDFromHex(c.Params("id"))
+	objectId, err := primitive.ObjectIDFromHex(c.Query("id"))
 	if err != nil {
 		return c.Status(fiber.StatusInternalServerError).JSON(response.ResponseUser{
 			Message:    "编号错误",
