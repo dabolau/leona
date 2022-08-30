@@ -23,6 +23,7 @@ var userCollection = database.GetCollection(database.MongoClient, "users")
 var validate = validator.New()
 
 // 用户信息
+// https://docs.gofiber.io/api/app#route-handlers
 func UserHandler(c *fiber.Ctx) error {
 	// 数据模型
 	var users []model.User
