@@ -1,162 +1,335 @@
 {
 	"info": {
-		"_postman_id": "53db7ad4-222e-4d48-b516-74e2f8f8d855",
+		"_postman_id": "25370ee9-2da0-4151-b5d3-f52ae4da1c5b",
 		"name": "leona",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21505203"
 	},
 	"item": [
 		{
-			"name": "用户信息",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8081/user/?text=&size=3&page=1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8081",
-					"path": [
-						"user",
-						""
-					],
-					"query": [
-						{
-							"key": "text",
-							"value": ""
-						},
-						{
-							"key": "size",
-							"value": "3"
-						},
-						{
-							"key": "page",
-							"value": "1"
+			"name": "用户相关",
+			"item": [
+				{
+					"name": "用户信息",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/user/?text=&size=3&page=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"user",
+								""
+							],
+							"query": [
+								{
+									"key": "text",
+									"value": ""
+								},
+								{
+									"key": "size",
+									"value": "3"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
 						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "用户详情",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8081/user/detail/?id=6302eaa241074ed10562e223",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8081",
-					"path": [
-						"user",
-						"detail",
-						""
-					],
-					"query": [
-						{
-							"key": "id",
-							"value": "6302eaa241074ed10562e223"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "用户添加",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"username\":\"hello3\",\n    \"password\":\"123456\",\n    \"email\":\"hello3@qq.com\",\n    \"phone\":\"12345678901\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:8081/user/add",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8081",
-					"path": [
-						"user",
-						"add"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "用户编辑",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"username\":\"hello222\",\n    \"password\":\"123456\",\n    \"email\":\"hello222@qq.com\",\n    \"phone\":\"12345678901\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "用户详情",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/user/detail/?id=6302eaa241074ed10562e223",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"user",
+								"detail",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "6302eaa241074ed10562e223"
+								}
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:8081/user/change/?id=630daf11bffa3cf699547480",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8081",
-					"path": [
-						"user",
-						"change",
-						""
-					],
-					"query": [
-						{
-							"key": "id",
-							"value": "630daf11bffa3cf699547480"
+				{
+					"name": "用户添加",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"hello3\",\n    \"password\":\"123456\",\n    \"email\":\"hello3@qq.com\",\n    \"phone\":\"12345678901\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/user/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"user",
+								"add"
+							]
 						}
-					]
+					},
+					"response": []
+				},
+				{
+					"name": "用户编辑",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"hello222\",\n    \"password\":\"123456\",\n    \"email\":\"hello222@qq.com\",\n    \"phone\":\"12345678901\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/user/change/?id=630daf11bffa3cf699547480",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"user",
+								"change",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "630daf11bffa3cf699547480"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "用户删除",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/user/delete/?id=630d889c8d76f58de597523c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"user",
+								"delete",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "630d889c8d76f58de597523c"
+								}
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "用户删除",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8081/user/delete/?id=630d889c8d76f58de597523c",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8081",
-					"path": [
-						"user",
-						"delete",
-						""
-					],
-					"query": [
-						{
-							"key": "id",
-							"value": "630d889c8d76f58de597523c"
+			"name": "反馈相关",
+			"item": [
+				{
+					"name": "反馈信息",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/feedback/?text=&size=3&page=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"feedback",
+								""
+							],
+							"query": [
+								{
+									"key": "text",
+									"value": ""
+								},
+								{
+									"key": "size",
+									"value": "3"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
 						}
-					]
+					},
+					"response": []
+				},
+				{
+					"name": "反馈详情",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/feedback/detail/?id=630f1d90e13f94d023301da0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"feedback",
+								"detail",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "630f1d90e13f94d023301da0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "反馈添加",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"在打开软件的时候卡住了\",\n    \"description\": \"在打开软件的时候卡住了，请问怎么回事！\",\n    \"email\": \"hello1@qq.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/feedback/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"feedback",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "反馈编辑",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"hello111\",\n    \"description\": \"hello111 world\",\n    \"email\": \"hello1@qq.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/feedback/change/?id=630f1d90e13f94d023301da0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"feedback",
+								"change",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "630f1d90e13f94d023301da0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "反馈删除",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/feedback/delete/?id=630f1da2e13f94d023301da1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"feedback",
+								"delete",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "630f1da2e13f94d023301da1"
+								}
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		}
 	]
 }

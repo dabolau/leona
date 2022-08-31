@@ -13,6 +13,7 @@ func main() {
 	app.Use(logger.New())
 	// 获取路由
 	route.Home(app)
+	route.Feedback(app)
 	route.User(app)
 	// 监听服务
 	app.Listen("0.0.0.0:8081")
