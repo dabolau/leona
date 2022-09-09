@@ -10,16 +10,16 @@ import (
 // https://docs.gofiber.io/api/app#group
 // https://docs.gofiber.io/api/app#route
 func Feedback(app *fiber.App) {
-	// 用户分组
+	// 反馈分组
 	feedbackGroup := app.Group("/feedback")
-	// 用户信息
+	// 反馈信息
 	feedbackGroup.Get("/", controller.FeedbackHandler)
-	// 用户详情
+	// 反馈详情
 	feedbackGroup.Get("/detail", controller.FeedbackDetailHandler)
-	// 用户添加
+	// 反馈添加
 	feedbackGroup.Post("/add", controller.FeedbackAddHandler)
-	// 用户编辑
+	// 反馈编辑
 	feedbackGroup.Put("/change", controller.FeedbackChangeHandler)
-	// 用户删除
+	// 反馈删除
 	feedbackGroup.Delete("/delete", controller.FeedbackDeleteHandler)
 }

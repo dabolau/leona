@@ -330,6 +330,164 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "版本相关",
+			"item": [
+				{
+					"name": "版本信息",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/version/?text=&size=3&page=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"version",
+								""
+							],
+							"query": [
+								{
+									"key": "text",
+									"value": ""
+								},
+								{
+									"key": "size",
+									"value": "3"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "版本详情",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/version/detail/?id=6319b5b729c111774a286023",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"version",
+								"detail",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "6319b5b729c111774a286023"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "版本添加",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"版本更新1.0.0\",\n    \"description\": \"更新到第一个版本，优化程序功能\",\n    \"version\":\"1.0.0\",\n    \"url\": \"http://www.baidu.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/version/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"version",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "版本编辑",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"更新版本1.0.1\",\n    \"version\": \"1.0.1\",\n    \"description\": \"更新到第一个版本，优化程序功能\",\n    \"url\": \"http://www.baidu.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/version/change/?id=6319b5b729c111774a286023",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"version",
+								"change",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "6319b5b729c111774a286023"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "版本删除",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/version/delete/?id=6319b5b729c111774a286023",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"version",
+								"delete",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "6319b5b729c111774a286023"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
