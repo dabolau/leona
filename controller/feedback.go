@@ -19,8 +19,8 @@ import (
 // 反馈集合
 var feedbackCollection = database.GetCollection(database.MongoClient, "feedbacks")
 
-// 验证器
-var validateFeedback = validator.New()
+// 反馈验证器
+var feedbackValidate = validator.New()
 
 // 反馈信息
 // https://docs.gofiber.io/api/app#route-handlers
@@ -114,7 +114,7 @@ func FeedbackAddHandler(c *fiber.Ctx) error {
 		})
 	}
 	// 使用验证器验证必填参数
-	err = validateFeedback.Struct(&requestFeedback)
+	err = feedbackValidate.Struct(&requestFeedback)
 	if err != nil {
 		return c.Status(fiber.StatusBadRequest).JSON(response.ResponseFeedback{
 			Message:    "验证参数错误",
@@ -163,7 +163,7 @@ func FeedbackChangeHandler(c *fiber.Ctx) error {
 		})
 	}
 	// 使用验证器验证必填参数
-	err = validateFeedback.Struct(&requestFeedback)
+	err = feedbackValidate.Struct(&requestFeedback)
 	if err != nil {
 		return c.Status(fiber.StatusBadRequest).JSON(response.ResponseFeedback{
 			Message:    "验证参数错误",

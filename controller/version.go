@@ -19,8 +19,8 @@ import (
 // 版本集合
 var versionCollection = database.GetCollection(database.MongoClient, "versions")
 
-// 验证器
-var validateVersion = validator.New()
+// 版本验证器
+var versionValidate = validator.New()
 
 // 版本信息
 // https://docs.gofiber.io/api/app#route-handlers
@@ -114,7 +114,7 @@ func VersionAddHandler(c *fiber.Ctx) error {
 		})
 	}
 	// 使用验证器验证必填参数
-	err = validateVersion.Struct(&requestVersion)
+	err = versionValidate.Struct(&requestVersion)
 	if err != nil {
 		return c.Status(fiber.StatusBadRequest).JSON(response.ResponseVersion{
 			Message:    "验证参数错误",
@@ -163,7 +163,7 @@ func VersionChangeHandler(c *fiber.Ctx) error {
 		})
 	}
 	// 使用验证器验证必填参数
-	err = validateVersion.Struct(&requestVersion)
+	err = versionValidate.Struct(&requestVersion)
 	if err != nil {
 		return c.Status(fiber.StatusBadRequest).JSON(response.ResponseVersion{
 			Message:    "验证参数错误",

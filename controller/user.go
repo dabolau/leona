@@ -19,8 +19,8 @@ import (
 // 用户集合
 var userCollection = database.GetCollection(database.MongoClient, "users")
 
-// 验证器
-var validate = validator.New()
+// 用户验证器
+var userValidate = validator.New()
 
 // 用户信息
 // https://docs.gofiber.io/api/app#route-handlers
@@ -114,7 +114,7 @@ func UserAddHandler(c *fiber.Ctx) error {
 		})
 	}
 	// 使用验证器验证必填参数
-	err = validate.Struct(&requestUser)
+	err = userValidate.Struct(&requestUser)
 	if err != nil {
 		return c.Status(fiber.StatusBadRequest).JSON(response.ResponseUser{
 			Message:    "验证参数错误",
@@ -163,7 +163,7 @@ func UserChangeHandler(c *fiber.Ctx) error {
 		})
 	}
 	// 使用验证器验证必填参数
-	err = validate.Struct(&requestUser)
+	err = userValidate.Struct(&requestUser)
 	if err != nil {
 		return c.Status(fiber.StatusBadRequest).JSON(response.ResponseUser{
 			Message:    "验证参数错误",
