@@ -13,7 +13,29 @@
 					"name": "用户信息",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhYm9sYXUiLCJleHAiOjE2NjYwOTg3MDN9.iiHvBCDtXp9o2IpEXpqASSZ8QerKP-pA7gFKuYt76sY",
+								"description": "错误格式",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhYm9sYXUiLCJpc3MiOiJpc3N1ZXIiLCJleHAiOjE2NjM1MTUzNTh9.DkGnbqG8oEAeCfO5DO0peUimdwIKW2kMr-im_rv3bhw",
+								"description": "已过期的",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhYm9sYXUiLCJleHAiOjE2NjYwOTg3MDN9.iiHvBCDtXp9o2IpEXpqASSZ8QerKP-pA7gFKuYt76sY",
+								"description": "未过期的",
+								"type": "text",
+								"disabled": true
+							}
+						],
 						"url": {
 							"raw": "http://localhost:8081/user/?text=&size=3&page=1",
 							"protocol": "http",
@@ -643,6 +665,183 @@
 							"path": [
 								"account",
 								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "视频相关",
+			"item": [
+				{
+					"name": "视频信息",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8081/video/?text=&size=3&page=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"video",
+								""
+							],
+							"query": [
+								{
+									"key": "text",
+									"value": ""
+								},
+								{
+									"key": "size",
+									"value": "3"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "视频详情",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/video/detail/?id=6302eaa241074ed10562e223",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"video",
+								"detail",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "6302eaa241074ed10562e223"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "视频添加",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Name\": \"斯巴达克斯：血与沙\",\n    \"Category\": \"电视剧\",\n    \"Type\": \"欧美剧\",\n    \"Area\": \"美国\",\n    \"Language\": \"英语\",\n    \"Director\": \"Grady,Hall\",\n    \"Actor\": \"安迪·怀特菲尔德,马努·贝内特,Erin,Cummings,Nick,Tarabay,Antonio,Te,Maioho\",\n    \"Year\": \"2010\",\n    \"Score\": \"9.0\",\n    \"Status\": \"更新至13集已完结\",\n    \"Description\": \"剧集讲述斯巴达克斯从奴隶变成英雄的血泪辛酸史。被罗马人背叛，流放成奴隶，变为角斗士——斯巴达克斯被迫背井离乡，离开自己最爱的女人，被放置于罗马最残忍，也是最盛行的娱乐场所角斗场中。但是血腥的战斗仅仅是悲剧的一部分，斯巴达克斯还要经得住财富，腐败，诱惑的考验。要想活命，他必须成为男人中的男人，一名勇士。要想活命，他必须成为比角斗士更重要的角色——一个传奇。\",\n    \"Picture\": \"https://img.wolongimg.com:65/upload/vod/20220102-1/0d20c0486f553994be15bf47c27430e4.jpg\",\n    \"URLs\": [\n        {\n            \"Name\": \"第1集\",\n            \"URL\": \"https://wolongzywcdn3.com:65/20220502/FCAf66nW/index.m3u8\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/video/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"video",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "视频编辑",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ID\": \"63399d128d53569f22dfa43a\",\n    \"CreatedAt\": \"\",\n    \"UpdatedAt\": \"\",\n    \"DeletedAt\": \"\",\n    \"Name\": \"斯巴达克斯：血与沙\",\n    \"Category\": \"电视剧\",\n    \"Type\": \"欧美剧\",\n    \"Area\": \"美国\",\n    \"Language\": \"英语\",\n    \"Director\": \"Grady,Hall\",\n    \"Actor\": \"安迪·怀特菲尔德,马努·贝内特,Erin,Cummings,Nick,Tarabay,Antonio,Te,Maioho\",\n    \"Year\": \"2010\",\n    \"Score\": \"9.0\",\n    \"Status\": \"更新至13集已完结\",\n    \"Description\": \"剧集讲述斯巴达克斯从奴隶变成英雄的血泪辛酸史。被罗马人背叛，流放成奴隶，变为角斗士——斯巴达克斯被迫背井离乡，离开自己最爱的女人，被放置于罗马最残忍，也是最盛行的娱乐场所角斗场中。但是血腥的战斗仅仅是悲剧的一部分，斯巴达克斯还要经得住财富，腐败，诱惑的考验。要想活命，他必须成为男人中的男人，一名勇士。要想活命，他必须成为比角斗士更重要的角色——一个传奇。\",\n    \"Picture\": \"https://img.wolongimg.com:65/upload/vod/20220102-1/0d20c0486f553994be15bf47c27430e4.jpg\",\n    \"URLs\": [\n        {\n            \"Name\": \"第01集\",\n            \"URL\": \"https://wolongzywcdn3.com:65/20220502/FCAf66nW/index.m3u8\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/video/change/?id=63399d128d53569f22dfa43a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"video",
+								"change",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "63399d128d53569f22dfa43a"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "视频删除",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/video/delete/?id=63399cc98d53569f22dfa439",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"video",
+								"delete",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "63399cc98d53569f22dfa439"
+								}
 							]
 						}
 					},

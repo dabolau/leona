@@ -13,6 +13,7 @@ func main() {
 	app.Use(logger.New())
 	// 获取路由
 	route.Home(app)
+	route.Video(app)
 	route.Feedback(app)
 	route.Version(app)
 	route.Account(app)
