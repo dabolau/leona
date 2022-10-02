@@ -47,7 +47,7 @@ func UserHandler(c *fiber.Ctx) error {
 		findOptions.SetLimit(pageSize)
 	}
 	// 查询数据
-	cursor, err := userCollection.Find(c.Context(), bson.M{"username": bson.M{"$regex": primitive.Regex{Pattern: fmt.Sprintf(".*%v.*", text), Options: "i"}}}, &findOptions)
+	cursor, err := userCollection.Find(c.Context(), bson.M{"Username": bson.M{"$regex": primitive.Regex{Pattern: fmt.Sprintf(".*%v.*", text), Options: "i"}}}, &findOptions)
 	if err != nil {
 		return c.Status(fiber.StatusNotFound).JSON(response.ResponseUser{
 			Message:    "查询失败",

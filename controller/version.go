@@ -47,7 +47,7 @@ func VersionHandler(c *fiber.Ctx) error {
 		findOptions.SetLimit(pageSize)
 	}
 	// 查询数据
-	cursor, err := versionCollection.Find(c.Context(), bson.M{"name": bson.M{"$regex": primitive.Regex{Pattern: fmt.Sprintf(".*%v.*", text), Options: "i"}}}, &findOptions)
+	cursor, err := versionCollection.Find(c.Context(), bson.M{"Name": bson.M{"$regex": primitive.Regex{Pattern: fmt.Sprintf(".*%v.*", text), Options: "i"}}}, &findOptions)
 	if err != nil {
 		return c.Status(fiber.StatusNotFound).JSON(response.ResponseVersion{
 			Message:    "查询失败",

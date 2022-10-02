@@ -31,11 +31,11 @@ var HTMLEMailTemplate = `
 
 // 初始化发送邮件的配置
 var (
-	emailAddrress     = "smtp.qq.com:25"   // 地址和端口
-	emailAuthIdentity = ""                 // 验证身份
-	emailAuthUsername = "dabolau@qq.com"   // 验证用户名
-	emailAuthPassword = "jasshsdcbgktbjcc" // 验证密码
-	emailAuthHost     = "smtp.qq.com"      // 验证主机
+	emailAddrress     = "smtp.qq.com:25"     // 地址和端口
+	emailAuthIdentity = ""                   // 验证身份
+	emailAuthUsername = "dabolau@qq.com"     // 验证用户名
+	emailAuthPassword = "dbdmxyjlifmzbmbgih" // 验证密码
+	emailAuthHost     = "smtp.qq.com"        // 验证主机
 )
 
 // 发送文本邮件

@@ -54,7 +54,7 @@ func LoginHandler(c *fiber.Ctx) error {
 		})
 	}
 	// 查询数据
-	err = accountCollection.FindOne(c.Context(), bson.M{"$or": bson.A{bson.M{"username": requestAccount.Username}, bson.M{"email": requestAccount.Username}, bson.M{"phone": requestAccount.Username}}, "password": requestAccount.Password}).Decode(&account)
+	err = accountCollection.FindOne(c.Context(), bson.M{"$or": bson.A{bson.M{"Username": requestAccount.Username}, bson.M{"Email": requestAccount.Username}, bson.M{"Phone": requestAccount.Username}}, "Password": requestAccount.Password}).Decode(&account)
 	if err != nil {
 		return c.Status(fiber.StatusNotFound).JSON(response.ResponseAccount{
 			Message:    "登录失败",
@@ -101,7 +101,7 @@ func RegisterHandler(c *fiber.Ctx) error {
 		})
 	}
 	// 查询数据
-	err = accountCollection.FindOne(c.Context(), bson.M{"$or": bson.A{bson.M{"username": requestAccount.Username}, bson.M{"email": requestAccount.Email}, bson.M{"phone": requestAccount.Phone}}}).Decode(&account)
+	err = accountCollection.FindOne(c.Context(), bson.M{"$or": bson.A{bson.M{"Username": requestAccount.Username}, bson.M{"Email": requestAccount.Email}, bson.M{"Phone": requestAccount.Phone}}}).Decode(&account)
 	if err == nil {
 		return c.Status(fiber.StatusNotFound).JSON(response.ResponseAccount{
 			Message:    "查询失败",
@@ -150,7 +150,7 @@ func ChangepasswordHandler(c *fiber.Ctx) error {
 		})
 	}
 	// 查询数据
-	err = accountCollection.FindOne(c.Context(), bson.M{"username": requestAccount.Username, "password": requestAccount.Password}).Decode(&account)
+	err = accountCollection.FindOne(c.Context(), bson.M{"Username": requestAccount.Username, "Password": requestAccount.Password}).Decode(&account)
 	if err != nil {
 		return c.Status(fiber.StatusNotFound).JSON(response.ResponseAccount{
 			Message:    "查询失败",
@@ -158,7 +158,7 @@ func ChangepasswordHandler(c *fiber.Ctx) error {
 		})
 	}
 	// 更新数据
-	result, err := accountCollection.UpdateOne(c.Context(), bson.M{"username": requestAccount.Username, "password": requestAccount.Password}, bson.M{"$set": bson.M{"password": requestAccount.NewPassword}})
+	result, err := accountCollection.UpdateOne(c.Context(), bson.M{"Username": requestAccount.Username, "Password": requestAccount.Password}, bson.M{"$set": bson.M{"Password": requestAccount.NewPassword}})
 	if err != nil {
 		return c.Status(fiber.StatusInternalServerError).JSON(response.ResponseUser{
 			Message:    "修改失败",
@@ -197,7 +197,7 @@ func GetpasswordHandler(c *fiber.Ctx) error {
 		})
 	}
 	// 查询数据
-	err = accountCollection.FindOne(c.Context(), bson.M{"email": requestAccount.Email}).Decode(&account)
+	err = accountCollection.FindOne(c.Context(), bson.M{"Email": requestAccount.Email}).Decode(&account)
 	if err != nil {
 		return c.Status(fiber.StatusNotFound).JSON(response.ResponseAccount{
 			Message:    "找回失败",

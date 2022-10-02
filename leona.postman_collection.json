@@ -30,7 +30,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhYm9sYXUiLCJleHAiOjE2NjYwOTg3MDN9.iiHvBCDtXp9o2IpEXpqASSZ8QerKP-pA7gFKuYt76sY",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhlbGxvMSIsImlzcyI6Imlzc3VlciIsImV4cCI6MTY2NzMxNjY5M30.EqO6haHCTD65mvU9F571QxI2_pyAVboEgDmRJLId-N4",
 								"description": "未过期的",
 								"type": "text",
 								"disabled": true
@@ -71,7 +71,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/user/detail/?id=6302eaa241074ed10562e223",
+							"raw": "http://localhost:8081/user/detail/?id=6339a4d4fe5c6c8d4ab9edcb",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -85,7 +85,7 @@
 							"query": [
 								{
 									"key": "id",
-									"value": "6302eaa241074ed10562e223"
+									"value": "6339a4d4fe5c6c8d4ab9edcb"
 								}
 							]
 						}
@@ -99,7 +99,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"username\":\"hello3\",\n    \"password\":\"123456\",\n    \"email\":\"hello3@qq.com\",\n    \"phone\":\"12345678901\"\n}",
+							"raw": "{\n    \"Username\":\"hello1\",\n    \"Password\":\"123456\",\n    \"Email\":\"hello1@qq.com\",\n    \"Phone\":\"12345678901\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -128,7 +128,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"username\":\"hello222\",\n    \"password\":\"123456\",\n    \"email\":\"hello222@qq.com\",\n    \"phone\":\"12345678901\"\n}",
+							"raw": "{\n    \"Username\":\"hello2\",\n    \"Password\":\"123456\",\n    \"Email\":\"hello2@qq.com\",\n    \"Phone\":\"12345678902\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -136,7 +136,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/user/change/?id=630daf11bffa3cf699547480",
+							"raw": "http://localhost:8081/user/change/?id=6339a4d4fe5c6c8d4ab9edcb",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -150,7 +150,7 @@
 							"query": [
 								{
 									"key": "id",
-									"value": "630daf11bffa3cf699547480"
+									"value": "6339a4d4fe5c6c8d4ab9edcb"
 								}
 							]
 						}
@@ -163,7 +163,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/user/delete/?id=630d889c8d76f58de597523c",
+							"raw": "http://localhost:8081/user/delete/?id=6339a4d4fe5c6c8d4ab9edcb",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -177,7 +177,7 @@
 							"query": [
 								{
 									"key": "id",
-									"value": "630d889c8d76f58de597523c"
+									"value": "6339a4d4fe5c6c8d4ab9edcb"
 								}
 							]
 						}
@@ -229,7 +229,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/feedback/detail/?id=630f1d90e13f94d023301da0",
+							"raw": "http://localhost:8081/feedback/detail/?id=6339a5ceef9c7414d2f9da9a",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -243,7 +243,7 @@
 							"query": [
 								{
 									"key": "id",
-									"value": "630f1d90e13f94d023301da0"
+									"value": "6339a5ceef9c7414d2f9da9a"
 								}
 							]
 						}
@@ -257,7 +257,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"在打开软件的时候卡住了\",\n    \"description\": \"在打开软件的时候卡住了，请问怎么回事！\",\n    \"email\": \"hello1@qq.com\"\n}",
+							"raw": "{\n    \"Name\": \"在打开软件的时候卡住了\",\n    \"Description\": \"在打开软件的时候卡住了，请问怎么回事！\",\n    \"Email\": \"hello1@qq.com\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -286,7 +286,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"hello111\",\n    \"description\": \"hello111 world\",\n    \"email\": \"hello1@qq.com\"\n}",
+							"raw": "{\n    \"Name\": \"卡住了\",\n    \"Description\": \"在首屏界面卡主了\",\n    \"Email\": \"hello2@qq.com\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -294,7 +294,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/feedback/change/?id=630f1d90e13f94d023301da0",
+							"raw": "http://localhost:8081/feedback/change/?id=6339a5ceef9c7414d2f9da9a",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -308,7 +308,7 @@
 							"query": [
 								{
 									"key": "id",
-									"value": "630f1d90e13f94d023301da0"
+									"value": "6339a5ceef9c7414d2f9da9a"
 								}
 							]
 						}
@@ -330,7 +330,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/feedback/delete/?id=630f1da2e13f94d023301da1",
+							"raw": "http://localhost:8081/feedback/delete/?id=6339a5ceef9c7414d2f9da9a",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -344,7 +344,7 @@
 							"query": [
 								{
 									"key": "id",
-									"value": "630f1da2e13f94d023301da1"
+									"value": "6339a5ceef9c7414d2f9da9a"
 								}
 							]
 						}
@@ -396,7 +396,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/version/detail/?id=6319b5b729c111774a286023",
+							"raw": "http://localhost:8081/version/detail/?id=6339a3346df15b1bbb043ed1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -410,7 +410,7 @@
 							"query": [
 								{
 									"key": "id",
-									"value": "6319b5b729c111774a286023"
+									"value": "6339a3346df15b1bbb043ed1"
 								}
 							]
 						}
@@ -424,7 +424,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"版本更新1.0.0\",\n    \"description\": \"更新到第一个版本，优化程序功能\",\n    \"version\":\"1.0.0\",\n    \"url\": \"http://www.baidu.com\"\n}",
+							"raw": "{\n    \"Name\": \"版本更新1.0.0\",\n    \"Description\": \"更新到第一个版本，优化程序功能\",\n    \"Version\":\"1.0.0\",\n    \"URL\": \"http://www.baidu.com\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -453,7 +453,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"更新版本1.0.1\",\n    \"version\": \"1.0.1\",\n    \"description\": \"更新到第一个版本，优化程序功能\",\n    \"url\": \"http://www.baidu.com\"\n}",
+							"raw": "{\n    \"Name\": \"更新版本1.0.1\",\n    \"Version\": \"1.0.1\",\n    \"Description\": \"更新到第一个版本，优化程序功能\",\n    \"URL\": \"http://www.baidu.com\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -461,7 +461,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/version/change/?id=6319b5b729c111774a286023",
+							"raw": "http://localhost:8081/version/change/?id=6339a3346df15b1bbb043ed1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -475,7 +475,7 @@
 							"query": [
 								{
 									"key": "id",
-									"value": "6319b5b729c111774a286023"
+									"value": "6339a3346df15b1bbb043ed1"
 								}
 							]
 						}
@@ -488,7 +488,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/version/delete/?id=6319b5b729c111774a286023",
+							"raw": "http://localhost:8081/version/delete/?id=6339a3346df15b1bbb043ed1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -502,7 +502,7 @@
 							"query": [
 								{
 									"key": "id",
-									"value": "6319b5b729c111774a286023"
+									"value": "6339a3346df15b1bbb043ed1"
 								}
 							]
 						}
@@ -541,7 +541,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"username\":\"12345678900\",\n    \"password\":\"111111\"\n}",
+							"raw": "{\n    \"Username\":\"hello1\",\n    \"Password\":\"123456\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -570,7 +570,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"username\":\"dabolau9\",\n    \"email\":\"dabolau9@qq.com\",\n    \"phone\":\"12345678909\",\n    \"password\":\"123456789\"\n}",
+							"raw": "{\n    \"Username\":\"hello1\",\n    \"Password\":\"123456\",\n    \"Email\":\"hello1@qq.com\",\n    \"Phone\":\"12345678900\"\n    \n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -599,7 +599,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"username\":\"dabolau\",\n    \"password\":\"111111\",\n    \"newpassword\":\"111111\",\n    \"confirmpassword\":\"111111\"\n}",
+							"raw": "{\n    \"Username\":\"hello1\",\n    \"Password\":\"123456\",\n    \"NewPassword\":\"654321\",\n    \"ConfirmPassword\":\"654321\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -628,7 +628,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\":\"dabolau@qq.com\"\n}",
+							"raw": "{\n    \"Email\":\"hello1@qq.com\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
