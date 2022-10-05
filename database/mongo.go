@@ -12,7 +12,7 @@ import (
 )
 
 // 数据库连接字符串
-var mongoURI = common.EnvMongoURI()
+var mongoURI = common.GetEnvMongoURI()
 
 // 数据库名称
 var mongoDbName = "leona"
