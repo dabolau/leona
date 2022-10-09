@@ -688,7 +688,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:8081/video/?text=&size=3&page=1",
+							"raw": "http://localhost:8081/video/?text=&category=电视剧&type=欧美剧&area=美国&language=英语&year=2022&size=3&page=1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -702,6 +702,26 @@
 								{
 									"key": "text",
 									"value": ""
+								},
+								{
+									"key": "category",
+									"value": "电视剧"
+								},
+								{
+									"key": "type",
+									"value": "欧美剧"
+								},
+								{
+									"key": "area",
+									"value": "美国"
+								},
+								{
+									"key": "language",
+									"value": "英语"
+								},
+								{
+									"key": "year",
+									"value": "2022"
 								},
 								{
 									"key": "size",

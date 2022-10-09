@@ -30,10 +30,20 @@ func VideoHandler(c *fiber.Ctx) error {
 	// 分页信息
 	var findOptions options.FindOptions
 	var text string = ""
+	var videoCategory string = ""
+	var videoType string = ""
+	var videoArea string = ""
+	var videoLanguage string = ""
+	var videoYear string = ""
 	var pageSize int64 = 10
 	var page int64 = 1
 	// 获取参数
 	text = c.Query("text")
+	videoCategory = c.Query("category")
+	videoType = c.Query("type")
+	videoArea = c.Query("area")
+	videoLanguage = c.Query("language")
+	videoYear = c.Query("year")
 	pageSize, _ = strconv.ParseInt(c.Query("size"), 10, 64)
 	page, _ = strconv.ParseInt(c.Query("page"), 10, 64)
 	if pageSize == 0 {
@@ -47,7 +57,14 @@ func VideoHandler(c *fiber.Ctx) error {
 		findOptions.SetLimit(pageSize)
 	}
 	// 查询数据
-	cursor, err := videoCollection.Find(c.Context(), bson.M{"Name": bson.M{"$regex": primitive.Regex{Pattern: fmt.Sprintf(".*%v.*", text), Options: "i"}}}, &findOptions)
+	cursor, err := videoCollection.Find(c.Context(), bson.M{
+		"Name":     bson.M{"$regex": primitive.Regex{Pattern: fmt.Sprintf(".*%v.*", text), Options: "i"}},
+		"Category": bson.M{"$regex": primitive.Regex{Pattern: fmt.Sprintf(".*%v.*", videoCategory), Options: "i"}},
+		"Type":     bson.M{"$regex": primitive.Regex{Pattern: fmt.Sprintf(".*%v.*", videoType), Options: "i"}},
+		"Area":     bson.M{"$regex": primitive.Regex{Pattern: fmt.Sprintf(".*%v.*", videoArea), Options: "i"}},
+		"Language": bson.M{"$regex": primitive.Regex{Pattern: fmt.Sprintf(".*%v.*", videoLanguage), Options: "i"}},
+		"Year":     bson.M{"$regex": primitive.Regex{Pattern: fmt.Sprintf(".*%v.*", videoYear), Options: "i"}},
+	}, &findOptions)
 	if err != nil {
 		return c.Status(fiber.StatusNotFound).JSON(response.ResponseVideo{
 			Message:    "查询失败",
