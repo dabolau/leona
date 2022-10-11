@@ -8,9 +8,9 @@ import (
 	"github.com/gofiber/fiber/v2/middleware/limiter"
 )
 
-// 速率限制中间件
+// 限制中间件
 // https://docs.gofiber.io/api/middleware/limiter
-func RateLimiter(app *fiber.App) {
+func Limiter(app *fiber.App) {
 	app.Use(limiter.New(limiter.Config{
 		// 定义函数，在返回true时跳过此中间件
 		// Next: func(c *fiber.Ctx) bool {

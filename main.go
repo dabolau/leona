@@ -1,21 +1,20 @@
 package main
 
 import (
+	"github.com/dabolau/leona/middleware"
 	"github.com/dabolau/leona/route"
 	"github.com/gofiber/fiber/v2"
-	"github.com/gofiber/fiber/v2/middleware/cors"
-	"github.com/gofiber/fiber/v2/middleware/logger"
 )
 
 func main() {
 	// 获取应用实例
 	app := fiber.New()
-	// 使用日志中间件s
-	app.Use(logger.New())
+	// 使用日志中间件
+	middleware.Logger(app)
 	// 使用跨域中间件
-	app.Use(cors.New())
-	// 使用速率限制中间件
-	// middleware.RateLimiter(app)
+	middleware.CORS(app)
+	// 使用限制中间件
+	// middleware.Limiter(app)
 	// 获取路由
 	route.Home(app)
 	route.Video(app)
