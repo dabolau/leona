@@ -43,8 +43,9 @@ func UserHandler(c *fiber.Ctx) error {
 		page = 1
 	}
 	if pageSize > 0 {
-		findOptions.SetSkip((page - 1) * pageSize)
-		findOptions.SetLimit(pageSize)
+		findOptions.SetSort(bson.M{"_id": -1})     // 排序
+		findOptions.SetSkip((page - 1) * pageSize) // 分页
+		findOptions.SetLimit(pageSize)             // 分页
 	}
 	// 查询数据
 	cursor, err := userCollection.Find(c.Context(), bson.M{"Username": bson.M{"$regex": primitive.Regex{Pattern: fmt.Sprintf(".*%v.*", text), Options: "i"}}}, &findOptions)
