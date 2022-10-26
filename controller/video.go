@@ -53,9 +53,9 @@ func VideoHandler(c *fiber.Ctx) error {
 		page = 1
 	}
 	if pageSize > 0 {
-		findOptions.SetSort(bson.M{"Year": -1})    // 排序
-		findOptions.SetSkip((page - 1) * pageSize) // 分页
-		findOptions.SetLimit(pageSize)             // 分页
+		findOptions.SetSort(bson.M{"UpdatedAt": -1}) // 排序
+		findOptions.SetSkip((page - 1) * pageSize)   // 分页
+		findOptions.SetLimit(pageSize)               // 分页
 	}
 	// 查询数据
 	cursor, err := videoCollection.Find(c.Context(), bson.M{
