@@ -41,6 +41,18 @@ CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o leona
 docker build -t leona:latest .
 ```
 
+# 保存镜像
+
+```bash
+docker save -o leona.tar leona:latest
+```
+
+# 载入镜像
+
+```bash
+docker load -i leona.tar
+```
+
 # 启动程序
 
 ```bash
